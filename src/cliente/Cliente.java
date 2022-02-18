@@ -13,12 +13,8 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
 public class Cliente {
-	String host = "localhost";
-	int puerto = 13000;
 	// Variable con el fichero "Properties" con la configuración
 	private static final String PROPERTIES_FILE = "src/config/datos.properties";
-	
-	
 
 	public static void main(String[] args) throws InterruptedException {
 		
