@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package servidor;
 
 import java.io.BufferedReader;
@@ -12,10 +10,7 @@ import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocket;
 
-/**
- * @author marta
- *
- */
+
 public class Servidor {
 	public static void main(String[] args) {
 		int puerto = 13000;
@@ -49,6 +44,6 @@ public class Servidor {
 		}
 	}
 
-	}
+	
 
 }
