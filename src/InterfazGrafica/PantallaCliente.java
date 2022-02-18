@@ -48,7 +48,7 @@ public class PantallaCliente extends JFrame {
 		
 		textField = new JTextField();
 		textField.setBorder(BorderFactory.createLineBorder(Color.black));
-		textField.setBounds(5, 326, 375, 51);
+		textField.setBounds(10, 326, 370, 51);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		

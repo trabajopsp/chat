@@ -71,7 +71,7 @@ public class PantallaClientePrincipal extends JFrame {
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		txtNombre.setBounds(31, 51, 240, 58);
+		txtNombre.setBounds(31, 59, 240, 42);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 	}
