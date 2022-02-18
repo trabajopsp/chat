@@ -2,9 +2,11 @@
 package servidor;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Properties;
 
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
@@ -12,12 +14,16 @@ import javax.net.ssl.SSLSocket;
 
 
 public class Servidor {
+	// Variable con el fichero "Properties" con la configuración
+	private static final String PROPERTIES_FILE = "src/config/datos.properties";
 	public static void main(String[] args) {
-		int puerto = 13000;
+		Properties properties = new Properties();
 		System.setProperty("javax.net.ssl.keystore", "src/certificado/mpd");
 		System.setProperty("javax.net.ssl.keyStorePassword", "123456");
 		
 		try {
+			properties.load(new BufferedReader(new FileReader(PROPERTIES_FILE)));
+			int puerto = Integer.valueOf(properties.getProperty("puertoEscucha"));
 			SSLServerSocketFactory fabrica = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
 			SSLServerSocket miServidor = (SSLServerSocket) fabrica.createServerSocket(puerto);
 			
