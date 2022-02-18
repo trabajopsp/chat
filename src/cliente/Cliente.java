@@ -22,8 +22,8 @@ public class Cliente {
 	public static void main(String[] args) throws InterruptedException {
 		
 		//Para el certificado:
-		/*System.setProperty("javax.net.ssl.trustStore","src/Ejercicio1/UsuarioAlmacenSSL");
-		System.setProperty("javax.net.ssl.trustStorePassword","890123");*/
+		System.setProperty("javax.net.ssl.trustStore","src/certificado/Usuariompd");
+		System.setProperty("javax.net.ssl.trustStorePassword","890123");
 
 		Properties properties = new Properties();
 
