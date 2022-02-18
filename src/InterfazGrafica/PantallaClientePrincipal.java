@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import cliente.Cliente;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -51,6 +54,8 @@ public class PantallaClientePrincipal extends JFrame {
 				}else {
 					PantallaCliente p = new PantallaCliente();
 					p.setVisible(true);
+					String nombre = txtNombre.getText();
+					Cliente cliente = new Cliente();
 				}
 				
 			}

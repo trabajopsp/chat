@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class PantallaServidor extends JFrame {
 
@@ -41,11 +42,20 @@ public class PantallaServidor extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.black));
-		lblNewLabel.setBounds(10, 11, 464, 318);
-		contentPane.add(lblNewLabel);
+		JLabel txtListadoClientes = new JLabel();
+		txtListadoClientes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtListadoClientes.setBorder(BorderFactory.createLineBorder(Color.black));
+		txtListadoClientes.setBounds(10, 11, 113, 318);
+		contentPane.add(txtListadoClientes);
+		
+		JButton btnSalirConexion = new JButton("Salir conexion");
+		btnSalirConexion.setBounds(361, 357, 113, 23);
+		contentPane.add(btnSalirConexion);
+		
+		JLabel txtChatServidor = new JLabel();
+		txtChatServidor.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtChatServidor.setBorder(BorderFactory.createLineBorder(Color.black));
+		txtChatServidor.setBounds(133, 11, 341, 318);
+		contentPane.add(txtChatServidor);
 	}
-
 }
