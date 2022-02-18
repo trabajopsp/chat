@@ -3,10 +3,12 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import cliente.Cliente;
+import servidor.Servidor;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -17,7 +19,7 @@ import java.awt.event.ActionEvent;
 public class PantallaClientePrincipal extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNombre;
+	static public JTextField txtNombre;
 
 	/**
 	 * Launch the application.
@@ -49,13 +51,14 @@ public class PantallaClientePrincipal extends JFrame {
 		JButton btnConectar = new JButton("Conectar");
 		btnConectar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (txtNombre.equals("")) {
-					
+				if (txtNombre.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Debes poner un nombre");
 				}else {
-					PantallaCliente p = new PantallaCliente();
-					p.setVisible(true);
+					Servidor s = new Servidor();
 					String nombre = txtNombre.getText();
-					Cliente cliente = new Cliente();
+					s.setNombreCliente(nombre);
+					
+					
 				}
 				
 			}

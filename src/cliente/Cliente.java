@@ -12,6 +12,8 @@ import java.util.Properties;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
+import InterfazGrafica.PantallaClientePrincipal;
+
 public class Cliente {
 	// Variable con el fichero "Properties" con la configuración
 	private static final String PROPERTIES_FILE = "src/config/datos.properties";
@@ -28,27 +30,22 @@ public class Cliente {
 			properties.load(new BufferedReader(new FileReader(PROPERTIES_FILE)));
 			int puerto = Integer.valueOf(properties.getProperty("puertoEscucha"));
 			String host = properties.getProperty("host");
-
+			
+			PantallaClientePrincipal conexion = new PantallaClientePrincipal();
+			conexion.setVisible(true);
+			
+			
 			// Creación de Socket Seguro
 			SSLSocketFactory fabrica = (SSLSocketFactory) SSLSocketFactory.getDefault();
 			SSLSocket misocket = (SSLSocket) fabrica.createSocket(host, puerto);
-
+			
+			
 			// Para la lectura de lo que nos llegue por el socket
 			BufferedReader leeCliente = new BufferedReader(new InputStreamReader(misocket.getInputStream()));
 			BufferedWriter escribeCliente = new BufferedWriter(new OutputStreamWriter(misocket.getOutputStream()));
-
-			// Lectura
-			String linea = leeCliente.readLine();
-			System.out.println("He leido =>" + linea);
-			for (int i = 0; i < 10; i++) {
-
-				Thread.sleep(1000);
-
-				escribeCliente.write("soy " + linea + " iteraccion:" + i + "\n");
-				escribeCliente.flush();
-				System.out.println("soy " + linea + " iteraccion:" + i);
-			}
-
+			
+			
+		
 			leeCliente.close();
 			misocket.close();
 			System.out.println("TERMINO");

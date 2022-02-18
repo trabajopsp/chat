@@ -13,7 +13,10 @@ import javax.swing.JButton;
 
 public class PantallaServidor extends JFrame {
 
-	private JPanel contentPane;
+	public JPanel contentPane;
+	public JLabel txtListadoClientes;
+	public JButton btnSalirConexion;
+	static public JLabel txtChatServidor;
 
 	/**
 	 * Launch the application.
@@ -42,17 +45,17 @@ public class PantallaServidor extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel txtListadoClientes = new JLabel();
+		txtListadoClientes = new JLabel();
 		txtListadoClientes.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtListadoClientes.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtListadoClientes.setBounds(10, 11, 113, 318);
 		contentPane.add(txtListadoClientes);
 		
-		JButton btnSalirConexion = new JButton("Salir conexion");
+		btnSalirConexion = new JButton("Salir conexion");
 		btnSalirConexion.setBounds(361, 357, 113, 23);
 		contentPane.add(btnSalirConexion);
 		
-		JLabel txtChatServidor = new JLabel();
+		txtChatServidor = new JLabel();
 		txtChatServidor.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		txtChatServidor.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtChatServidor.setBounds(133, 11, 341, 318);

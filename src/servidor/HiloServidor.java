@@ -8,6 +8,8 @@ import java.io.OutputStreamWriter;
 
 import javax.net.ssl.SSLSocket;
 
+import InterfazGrafica.PantallaCliente;
+
 public class HiloServidor extends Thread{
 	private SSLSocket cliente;
 	private String nombreCliente;
@@ -24,6 +26,8 @@ public class HiloServidor extends Thread{
 			BufferedReader leerDeCliente = 
 			new BufferedReader(new InputStreamReader(cliente.getInputStream())))
 		{
+			PantallaCliente p = new PantallaCliente();
+			p.setVisible(true);
 			
 			// envío algo al servidor
 			escribirAlCliente.write("Entra en el chat " + nombreCliente);
